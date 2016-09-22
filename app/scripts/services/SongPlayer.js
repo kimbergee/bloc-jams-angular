@@ -104,7 +104,7 @@ and calls setSong function if true
 probably paused and the user would like to resume playing it */
       } else if (SongPlayer.currentSong === song) {
         if (currentBuzzObject.isPaused()) {
-          currentBuzzObject.play();
+          playSong(song);
         }
       }
     };
