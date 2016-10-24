@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/collection.css">
     <link rel="stylesheet" type="text/css" href="/styles/album.css">
     <link rel="stylesheet" type="text/css" href="/styles/player_bar.css">
+    <link rel="stylesheet" type="text/css" href="/styles/metric.css">
 </head>
 <body>
     <nav class="navbar"> <!-- navigation bar -->
@@ -20,22 +21,36 @@
       </a>
       <div class="links-container">
         <a ui-sref="collection" class="navbar-link">collection</a>
+        <a ui-sref="metric" class="navbar-link">play stats</a>
       </div>
     </nav>
 
     <ui-view></ui-view>
+    <!-- jqLite -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- UI-Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+    <!-- Buzz Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
+
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/LandingCtrl.js"></script>
     <script src="/scripts/controllers/CollectionCtrl.js"></script>
     <script src="/scripts/controllers/AlbumCtrl.js"></script>
     <script src="/scripts/controllers/PlayerBarCtrl.js"></script>
+    <script src="/scripts/controllers/MetricCtrl.js"></script>
     <script src="/scripts/directives/seekBar.js"></script>
     <script src="/scripts/services/Fixtures.js"></script>
     <script src="/scripts/services/SongPlayer.js"></script>
+    <script src="/scripts/services/Metric.js"></script>
     <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>

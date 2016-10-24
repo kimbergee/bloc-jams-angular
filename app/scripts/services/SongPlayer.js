@@ -1,5 +1,5 @@
 (function() {
-  function SongPlayer($rootScope, Fixtures) {
+  function SongPlayer($rootScope, Fixtures, Metric) {
     var SongPlayer = {};
 
 /*
@@ -107,6 +107,8 @@ probably paused and the user would like to resume playing it */
           playSong(song);
         }
       }
+/* Register the song to Metric*/
+      Metric.registerSongPlay(song);
     };
 
 /*
@@ -135,6 +137,8 @@ decreasing by 1
         var song = currentAlbum.songs[currentSongIndex];
         setSong(song);
         playSong(song);
+/* Register the song to Metric*/
+        Metric.registerSongPlay(song);
       }
     };
 
@@ -153,6 +157,8 @@ increasing by 1
         var song = currentAlbum.songs[currentSongIndex];
         setSong(song);
         playSong(song);
+/* Register the song to Metric*/
+        Metric.registerSongPlay(song);
       };
     };
 
@@ -182,5 +188,5 @@ increasing by 1
 
   angular
     .module('blocJams')
-    .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+    .factory('SongPlayer', ['$rootScope', 'Fixtures', 'Metric', SongPlayer]);
 })();

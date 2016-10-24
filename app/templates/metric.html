@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="metric-header">Music Stats</h2>
+
+  <table class="metric-table">
+    <tr>
+      <thead>
+        <th>Songs Played</th>
+      </thead>
+    </tr>
+    <tr ng-repeat="song in metric.list track by $index">
+      <td>
+        {{song}}
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<ng-include src="'/templates/player_bar.html'"></ng-include>
