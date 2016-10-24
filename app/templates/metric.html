@@ -4,12 +4,15 @@
   <table class="metric-table">
     <tr>
       <thead>
-        <th>Songs Played</th>
+        <th colspan="2" class="table-name">Songs Played</th>
       </thead>
     </tr>
     <tr ng-repeat="song in metric.list track by $index">
       <td>
-        {{song}}
+        {{ song.title }}
+      </td>
+      <td>
+        {{ song.playedAt }}
       </td>
     </tr>
   </table>

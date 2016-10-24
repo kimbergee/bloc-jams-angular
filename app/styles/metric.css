@@ -4,5 +4,15 @@
 }
 
 .metric-table {
-  min-width: 500px;
+  padding: 10px 5px 10px 20px;
+}
+
+.table-name {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+td {
+  padding-left: 10px;
+  padding-right: 10px;
 }

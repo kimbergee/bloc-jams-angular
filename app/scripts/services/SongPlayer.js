@@ -1,5 +1,5 @@
 (function() {
-  function SongPlayer($rootScope, Fixtures, Metric) {
+  function SongPlayer($firebaseArray, $rootScope, Fixtures, Metric) {
     var SongPlayer = {};
 
 /*
@@ -108,7 +108,7 @@ probably paused and the user would like to resume playing it */
         }
       }
 /* Register the song to Metric*/
-      Metric.registerSongPlay(song);
+      Metric.saveSongPlay(song);
     };
 
 /*
@@ -138,7 +138,7 @@ decreasing by 1
         setSong(song);
         playSong(song);
 /* Register the song to Metric*/
-        Metric.registerSongPlay(song);
+        Metric.saveSongPlay(song);
       }
     };
 
@@ -158,7 +158,7 @@ increasing by 1
         setSong(song);
         playSong(song);
 /* Register the song to Metric*/
-        Metric.registerSongPlay(song);
+        Metric.saveSongPlay(song);
       };
     };
 
@@ -188,5 +188,5 @@ increasing by 1
 
   angular
     .module('blocJams')
-    .factory('SongPlayer', ['$rootScope', 'Fixtures', 'Metric', SongPlayer]);
+    .factory('SongPlayer', ['$firebaseArray', '$rootScope', 'Fixtures', 'Metric', SongPlayer]);
 })();

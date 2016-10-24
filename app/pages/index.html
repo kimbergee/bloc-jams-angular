@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
     <!-- UI-Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -40,6 +40,24 @@
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB0O_iod3HRFCOXf26e3sYxKNcXqYiWxoU",
+      authDomain: "blocjams.firebaseapp.com",
+      databaseURL: "https://blocjams.firebaseio.com",
+      storageBucket: "blocjams.appspot.com",
+      messagingSenderId: "309236394115"
+    };
+    firebase.initializeApp(config);
+    </script>
 
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/LandingCtrl.js"></script>
