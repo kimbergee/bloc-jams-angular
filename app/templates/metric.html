@@ -1,18 +1,26 @@
-<div class="container">
+<div class="container" ng-controller="MetricCtrl">
   <h2 class="metric-header">Music Stats</h2>
+
+  <nvd3 options="options" data="data"></nvd3>
 
   <table class="metric-table">
     <tr>
       <thead>
-        <th colspan="2" class="table-name">Songs Played</th>
+        <th colspan="3" class="table-name">Songs Played</th>
       </thead>
     </tr>
     <tr ng-repeat="song in metric.list track by $index">
+      <td>
+        {{ song.artist }}
+      </td>
       <td>
         {{ song.title }}
       </td>
       <td>
         {{ song.playedAt }}
+      </td>
+      <td>
+        {{ song.playCount }}
       </td>
     </tr>
   </table>

@@ -4,22 +4,34 @@
     var songPlays = $firebaseArray(ref);
 
     return {
+
       // Function that records a metric object by pushing it to the $rootScope array
-      saveSongPlay: function(songObj) {
+      saveSongPlay: function(songObj, songMetrics) {
+
         // Add time to event saveSongPlay
         var uglyDate = new Date();
         var niceDate = moment(uglyDate).format('MMM DD YY, h:mm a');
+        var currentAlbum = Fixtures.getAlbum(songObj);
+        var currentArtist = currentAlbum.artist;
+        var songTitle = songObj.title;
 
-        songObj['playedAt'] = niceDate;
+        songMetrics = {};
 
-        songPlays.$add(songObj);
+        songMetrics['title'] = songTitle;
+        songMetrics['artist'] = currentArtist;
+        songMetrics['playedAt'] = niceDate;
+
+        // Add to firebaseArray
+        songPlays.$add(songMetrics);
+
       },
 
       listSongsPlayed: function() {
-        var songs = songPlays;
+        var songs = [];
 
         angular.forEach(songPlays, function(song) {
           songs.push({
+            artist: song.artist,
             title: song.title,
             playedAt: song.playedAt,
           });

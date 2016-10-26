@@ -29,6 +29,6 @@
       });
   }
   angular
-      .module('blocJams', ['ui.router', 'firebase'])
+      .module('blocJams', ['ui.router', 'firebase', 'nvd3'])
       .config(config);
 })();
