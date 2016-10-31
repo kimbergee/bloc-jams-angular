@@ -23,23 +23,25 @@
 
         // Add to firebaseArray
         songPlays.$add(songMetrics);
-
       },
 
-      listSongsPlayed: function() {
-        var songs = [];
 
-        angular.forEach(songPlays, function(song) {
-          songs.push({
-            artist: song.artist,
-            title: song.title,
-            playedAt: song.playedAt,
-          });
+      getSongPlayCounts: function() {
+        var counts = _.countBy(songPlays, "title");
+        var countObj = _.map(counts, function(count, title) {
+          return {
+            key: title,
+            y: count
+          };
         });
+        return countObj;
+      },
 
-        return songs;
+      getSongPlays: function() {
+        return songPlays;
       }
     };
+
   }
 
   angular

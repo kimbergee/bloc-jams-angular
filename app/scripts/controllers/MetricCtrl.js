@@ -1,6 +1,10 @@
 (function() {
   function MetricCtrl($scope, Metric, Fixtures) {
-    this.list = Metric.listSongsPlayed();
+    var vm = this;
+    Metric.getSongPlays().$loaded().then(function() {
+      vm.countList = Metric.getSongPlayCounts();
+      $scope.data = vm.countList;
+    });
 
     $scope.options = {
       chart: {
@@ -22,29 +26,6 @@
         }
       }
     };
-
-    $scope.data = [
-      {
-        key: "Blue",
-        y: 15
-      },
-      {
-        key: "Green",
-        y: 20
-      },
-      {
-        key: "Red",
-        y: 7
-      },
-      {
-        key: "Pink",
-        y: 15
-      },
-      {
-        key: "Magenta",
-        y: 10
-      }
-    ];
   }
 
   angular
